@@ -11,15 +11,18 @@ class Beer(Drink):
         self.__brand = brand
         self.__alcohol = alcohol
 
-beer1 = Beer("American IPA", "Antares", 7.5)
-beer2 = Beer("Kölsch", "Antares", 5)
-beer3 = Beer("Scotch", "Antares", 6)
-beer4 = Beer("Porter", "Antares", 5.5)
-beer5 = Beer("Barley Wine", "Antares", 10)
-beer6 = Beer("Lupulada", "Antares", 7.5)
-beer7 = Beer("Monasterio", "Antares", 14)
-beer8 = Beer("Centinela", "Antares", 14)
-beer9 = Beer("Catalina La Grande", "Antares", 11)
+        def getDetail(self):
+            return super().getDetail() + "de la marca" + self.__brand + ", su graduación alcoholica es de " + str (self.__alcohol)
+
+beer1  = Beer("American IPA", "Antares", 7.5)
+beer2  = Beer("Kölsch", "Antares", 5)
+beer3  = Beer("Scotch", "Antares", 6)
+beer4  = Beer("Porter", "Antares", 5.5)
+beer5  = Beer("Barley Wine", "Antares", 10)
+beer6  = Beer("Lupulada", "Antares", 7.5)
+beer7  = Beer("Monasterio", "Antares", 14)
+beer8  = Beer("Centinela", "Antares", 14)
+beer9  = Beer("Catalina La Grande", "Antares", 11)
 beer10 = Beer("20 años", "Antares", 11)
 beer11 = Beer("Titánica", "Antares", 20)
 beer12 = Beer("Imperial Stout", "Antares", 8.5)
@@ -31,4 +34,5 @@ beer17 = Beer("Fin de Tarde", "Antares", 5)
 beer18 = Beer("Cuatro 3", "Antares", 7.3)
 beer19 = Beer("Creme Stout", "Antares", 7)
 
-print(beer5.getDetail())
+
+print(beer1.getDetail())
