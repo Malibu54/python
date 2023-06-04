@@ -11,8 +11,8 @@ class Beer(Drink):
         self.__brand = brand
         self.__alcohol = alcohol
 
-        def getDetail(self):
-            return super().getDetail() + "de la marca" + self.__brand + ", su graduación alcoholica es de " + str (self.__alcohol)
+    def getDetail(self):
+            return super().getDetail() + "de la marca " + self.__brand + ", su graduación alcoholica es de " + str (self.__alcohol)
 
 beer1  = Beer("American IPA", "Antares", 7.5)
 beer2  = Beer("Kölsch", "Antares", 5)
