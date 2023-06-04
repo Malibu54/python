@@ -6,14 +6,20 @@ class Drink:
     
 
 class Beer(Drink):
+    Count = 0
     def __init__(self, name, brand, alcohol):
         super().__init__(name)
         self.__brand = brand
         self.__alcohol = alcohol
+        Beer.Count += 1
 
     def getDetail(self):
             return super().getDetail() + "de la marca " + self.__brand + ", su graduación alcoholica es de " + str (self.__alcohol)
 
+
+    @staticmethod
+    def getClassInfo():
+         return "Se han creado " + str(Beer.Count) + " tipos de cervezas en Antares"
 beer1  = Beer("American IPA", "Antares", 7.5)
 beer2  = Beer("Kölsch", "Antares", 5)
 beer3  = Beer("Scotch", "Antares", 6)
@@ -36,3 +42,4 @@ beer19 = Beer("Creme Stout", "Antares", 7)
 
 
 print(beer1.getDetail())
+print(Beer.getClassInfo())
