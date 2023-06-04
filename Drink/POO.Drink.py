@@ -16,10 +16,12 @@ class Beer(Drink):
     def getDetail(self):
             return super().getDetail() + "de la marca " + self.__brand + ", su graduación alcoholica es de " + str (self.__alcohol)
 
-
     @staticmethod
     def getClassInfo():
          return "Se han creado " + str(Beer.Count) + " tipos de cervezas en Antares"
+    
+##Listado de cervezas en Antares
+    
 beer1  = Beer("American IPA", "Antares", 7.5)
 beer2  = Beer("Kölsch", "Antares", 5)
 beer3  = Beer("Scotch", "Antares", 6)
