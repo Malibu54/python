@@ -59,9 +59,9 @@ Cada sección tiene su propio submenú
 
 ## 💡 Ejemplos de entrada:
 
-Integral: x * * 2 + 3*x - 1
-Función multivariable: x**2 + 2*x*y + y**2
-Serie: Para aₙ = n/(n+1), ingresa: n/(n+1)
+- Integral: **x * * 2 + 3*x - 1**
+- Función multivariable: **x * * 2 + 2*x*y + y**2**
+- Serie: Para aₙ = **n/(n+1), ingresa: n/(n+1)**
 
 ## 🎯 Ventajas:
 
