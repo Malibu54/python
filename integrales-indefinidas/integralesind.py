@@ -27,7 +27,46 @@ def resolver_integral_predefinida(opcion):
     """
     x = symbols('x')
     
-    integrales = {
+    # Ejercicio 1 - Integrales inmediatas
+    integrales_ej1 = {
+        '1a': 1 + x,
+        '1b': x * sqrt(x),
+        '1c': (sqrt(x) - x**3 * exp(x) + x**2) / x**3,
+        '1d': 4*cos(x) - 1/cos(x)**2,
+        '1e': (1 + x**2) / sqrt(x),
+        '1f': 3*x**4 + 5*x**9,
+        '1g': (1 - x**5) / (1 - x),
+        '1h': (1 - sqrt(x))**2,
+        '1i': (x**3 - 2*x**2 + 4*x) / x,
+        '1j': 2*sqrt(x) - 3*x**(1/3) - x**4,
+        '1k': (1 - sqrt(x)*exp(x)) / sqrt(x)
+    }
+    
+    # Ejercicio 2 - Integrales por sustitución
+    integrales_ej2 = {
+        '2a': (2*x**4) / (x**5 + 3),
+        '2b': (x**5 + 7)**8 * 5*x**4,
+        '2c': (3*x + 1) / sqrt(9*x**2 + 6*x + 2),
+        '2d': exp(1/x) / x**2,
+        '2e': 5 / (x * log(x)**2),
+        '2f': (x**2 + 1) / (x**3 + 3*x),
+        '2g': (log(x))**(-2) * (1/x),
+        '2h': 1 / (x * log(2*x)**2),
+        '2i': (x**2 + x)**2 * (2*x + 1),
+        '2j': (x - 3) / sqrt(9 - 18*x + 3*x**2),
+        '2k': (2*x - 1) / sqrt(5 + 4*x - 4*x**2),
+        '2l': x * sqrt(1 + 4*x**2),
+        '2m': x**3 * sqrt(x**4 + 3),
+        '2n': exp(-x**2) * x**2,
+        '2o': 2*x * sqrt(x**2 + 29),
+        '2p': log(x + 1) / (x + 1)
+    }
+    
+    # Combinar ambos diccionarios
+    todas_integrales = {**integrales_ej1, **integrales_ej2}
+    
+    # También mantener compatibilidad con formato anterior (solo letras)
+    integrales_compatibilidad = {
         'a': 1 + x,
         'b': x * sqrt(x),
         'c': (sqrt(x) - x**3 * exp(x) + x**2) / x**3,
@@ -41,8 +80,10 @@ def resolver_integral_predefinida(opcion):
         'k': (1 - sqrt(x)*exp(x)) / sqrt(x)
     }
     
-    if opcion.lower() in integrales:
-        expr = integrales[opcion.lower()]
+    todas_integrales.update(integrales_compatibilidad)
+    
+    if opcion.lower() in todas_integrales:
+        expr = todas_integrales[opcion.lower()]
         return expr
     return None
 
@@ -50,23 +91,49 @@ def mostrar_integrales_disponibles():
     """
     Muestra las integrales de la tarea disponibles
     """
-    print("\n=== INTEGRALES DE LA TAREA DISPONIBLES ===")
-    opciones = {
-        'a': '∫(1 + x) dx',
-        'b': '∫x√x dx',
-        'c': '∫(√x - x³eˣ + x²)/x³ dx',
-        'd': '∫(4cos(x) - 1/cos²(x)) dx',
-        'e': '∫(1 + x²)/√x dx',
-        'f': '∫(3x⁴ + 5x⁹) dx',
-        'g': '∫(1 - x⁵)/(1 - x) dx',
-        'h': '∫(1 - √x)² dx',
-        'i': '∫(x³ - 2x² + 4x)/x dx',
-        'j': '∫(2√x - ³√x - x⁴) dx',
-        'k': '∫(1 - √x·eˣ)/√x dx'
+    print("\n=== EJERCICIO 1: INTEGRALES INMEDIATAS ===")
+    opciones_ej1 = {
+        '1a': '∫(1 + x) dx',
+        '1b': '∫x√x dx', 
+        '1c': '∫(√x - x³eˣ + x²)/x³ dx',
+        '1d': '∫(4cos(x) - 1/cos²(x)) dx',
+        '1e': '∫(1 + x²)/√x dx',
+        '1f': '∫(3x⁴ + 5x⁹) dx',
+        '1g': '∫(1 - x⁵)/(1 - x) dx',
+        '1h': '∫(1 - √x)² dx',
+        '1i': '∫(x³ - 2x² + 4x)/x dx',
+        '1j': '∫(2√x - ³√x - x⁴) dx',
+        '1k': '∫(1 - √x·eˣ)/√x dx'
     }
     
-    for letra, integral in opciones.items():
-        print(f"{letra}) {integral}")
+    for codigo, integral in opciones_ej1.items():
+        print(f"{codigo}) {integral}")
+    
+    print("\n=== EJERCICIO 2: INTEGRALES POR SUSTITUCIÓN ===")
+    opciones_ej2 = {
+        '2a': '∫(2x⁴)/(x⁵ + 3) dx',
+        '2b': '∫(x⁵ + 7)⁸ · 5x⁴ dx',
+        '2c': '∫(3x + 1)/√(9x² + 6x + 2) dx',
+        '2d': '∫e^(1/x)/x² dx',
+        '2e': '∫5/(x·ln²(x)) dx',
+        '2f': '∫(x² + 1)/(x³ + 3x) dx',
+        '2g': '∫(ln(x))⁻² · (1/x) dx',
+        '2h': '∫1/(x·ln²(2x)) dx',
+        '2i': '∫(x² + x)² · (2x + 1) dx',
+        '2j': '∫(x - 3)/√(9 - 18x + 3x²) dx',
+        '2k': '∫(2x - 1)/√(5 + 4x - 4x²) dx',
+        '2l': '∫x·√(1 + 4x²) dx',
+        '2m': '∫x³·√(x⁴ + 3) dx',
+        '2n': '∫e^(-x²)·x² dx',
+        '2o': '∫2x·√(x² + 29) dx',
+        '2p': '∫ln(x + 1)/(x + 1) dx'
+    }
+    
+    for codigo, integral in opciones_ej2.items():
+        print(f"{codigo}) {integral}")
+    
+    print("\n💡 También puedes usar solo la letra para el Ejercicio 1:")
+    print("   Ejemplo: 'a' = '1a', 'b' = '1b', etc.")
 
 def main():
     print("🧮 CALCULADORA DE INTEGRALES SIMBÓLICAS")
@@ -76,7 +143,7 @@ def main():
     
     while True:
         print("\n¿Qué quieres hacer?")
-        print("1. Resolver integral de la tarea (a-k)")
+        print("1. Resolver integral de la tarea (Ejercicio 1: a-k, Ejercicio 2: 2a-2p)")
         print("2. Ingresar integral personalizada")
         print("3. Ver todas las integrales de la tarea")
         print("4. Salir")
