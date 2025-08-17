@@ -1,4 +1,4 @@
-# 📊 Características principales:
+# 📊 Características principales
 
 ## 1. Integrales Indefinidas
 
@@ -38,7 +38,7 @@
 * Interés compuesto
 * Elasticidad de demanda
 
-# 🚀 Cómo usar la calculadora:
+### 🚀 Cómo usar la calculadora
 
 Instalación de dependencias:
 
@@ -49,21 +49,20 @@ Ejecutar el programa:
 
 python3 calculadora_analisis.py
 ```
-## Navegación:
+
+## Navegación
 
 El programa tiene un menú interactivo
 Puedes elegir entre usar la calculadora o ver ejemplos
 Cada sección tiene su propio submenú
 
-
-
-## 💡 Ejemplos de entrada:
+### 💡 Ejemplos de entrada
 
 - Integral: **x * * 2 + 3*x - 1**
 - Función multivariable: **x * * 2 + 2*x*y + y**2**
 - Serie: Para aₙ = **n/(n+1), ingresa: n/(n+1)**
 
-## 🎯 Ventajas:
+## 🎯 Ventajas
 
 **Verificación con respuestas**: Puedes comparar los resultados con la página 24 de tu guía
 Flexibilidad: Acepta diferentes formas de entrada
